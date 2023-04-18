@@ -1,8 +1,8 @@
 ---
-- hosts: webserver
+- hosts: webservers
   become: True
   tasks:
-  - name: install packages
+  - name: Install packages
     yum:
       name: "httpd"
       state: "present"
@@ -14,5 +14,6 @@
   - name: Deploy static website
     copy:
       src:  index.html
-      dest: /var/www/html/    
+      dest: /var/www/html/
+...    
 
