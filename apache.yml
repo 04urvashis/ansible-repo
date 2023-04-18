@@ -7,7 +7,7 @@
       name: "httpd"
       state: "present"
   - name:  Start Apache Server
-    Service:
+    service:
       name: "httpd"
       state:  started
       enabled:  True
