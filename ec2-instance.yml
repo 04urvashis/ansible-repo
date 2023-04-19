@@ -7,8 +7,8 @@
   tasks:
   - name: start an instance with a public IP address
     amazon.aws.ec2_instance:
-      name: "Urvashi-dummy"
-      key_name: "urvi_KeyPair_pem"
+      name: "Nishant-dummy"
+      key_name: "nishant-keypair-terraform"
       instance_type: t2.micro
       security_group: default
       network:
@@ -17,3 +17,4 @@
       tags:
         Environment: Testing
       region: us-east-1
+      state: present # make it absent if you want to terminate the instance
