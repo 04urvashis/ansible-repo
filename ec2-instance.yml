@@ -1,0 +1,19 @@
+# Basic provisioning example
+- name: Ansible test
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  tags: provisioning
+  tasks:
+  - name: start an instance with a public IP address
+    amazon.aws.ec2_instance:
+      name: "Urvashi-dummy"
+      key_name: "urvi_KeyPair_pem"
+      instance_type: t2.micro
+      security_group: default
+      network:
+        assign_public_ip: true
+      image_id: ami-007855ac798b5175e
+      tags:
+        Environment: Testing
+      region: us-east-1

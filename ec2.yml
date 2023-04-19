@@ -16,7 +16,7 @@
   tasks:
   - name: Launch a new ec2 instance
     local_action: ec2
-                  group: {{security_group}}
+                 #group: {{security_group}}
                   instance_type: {{instance_type}} 
                   image: {{image}}
                   wait: true
